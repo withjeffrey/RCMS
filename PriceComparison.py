@@ -29,3 +29,13 @@ YSBV[1900:4400] = [30000+37500-10000 for i in X[1900:4400]]
 YSBV[4400:9400] = [30000+50000-10000 for i in X[4400:9400]]
 YSBV[9400:10000] = [30000+50000+20000-10000 for i in X[9400:10000]]
 
+#绘制图形
+import matplotlib.pyplot as plt
+plt.plot(X,YCE,label='Cloud with Rlink only')
+plt.plot(X,YCA,label='Cloud with Rlink and RVPN')
+plt.plot(X,YSB,label='Stack with Rlink only')
+plt.plot(X,YSBV,label='Stack with Rlink and RVPN')
+plt.xlabel('device number')
+plt.ylabel('price in first year')
+plt.legend()
+plt.show()
